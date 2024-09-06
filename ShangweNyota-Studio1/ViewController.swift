@@ -9,16 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var label: UILabel! //references label on story board
+//    @IBOutlet weak var label: UILabel! //references label on story board
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func setRandomValue() {
-        label.text = String(Int.random(in:0..<10))
+    @IBOutlet weak var slider: UISlider!
+    
+    @IBOutlet weak var washuLogo: UIImageView!
+    
+    
+    @IBAction func sliderChanged(_ sender: Any) {
+        print(slider.value)
+        washuLogo.layer.opacity = slider.value
     }
-
 }
 
